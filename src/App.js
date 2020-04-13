@@ -32,7 +32,6 @@ function App() {
   const onSubmit = (e) => {
     e.preventDefault();
     setData({ population, timeToElapse, reportedCases, totalHospitalBeds, periodType });
-    console.log(data);
   };
 
   return (
