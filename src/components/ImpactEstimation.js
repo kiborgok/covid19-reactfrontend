@@ -15,7 +15,7 @@ const ImpactEstimation = (props) => {
             <h2>Impact Estimation</h2>
             <Table striped bordered hover>
             <thead>
-            <tr style={{color: '#007bff'}}>
+            <tr className="blue-color">
                 <th>Currently Infected</th>
                 <th>Infections By Requested Time</th>
                 <th>Severe Cases By Requested Time</th>

@@ -38,11 +38,11 @@ function App() {
   return (
     <Router>
     <div className="App">
-      <header className="App-header" style={{ backgroundColor: 'transparent',height:'80px',border: '1px solid lightskyblue',boxShadow: '1px 1px 10px 0px grey'}} >
+      <header className="App-header" >
         <Navbar variant="light">
-          <Container style={{maxWidth: '800'}}>
+          <Container >
             <Navbar.Brand>
-              <Link style={{color: '#007bff'}}  to={"/"} className="nav-link">
+              <Link to={"/"} style={{color: '#007bff'}}>
                 Covid19 Estimator
               </Link>
             </Navbar.Brand>
@@ -50,10 +50,10 @@ function App() {
         </Navbar>
       </header>
 
-      <Container style={{display:'flex'}}>
+      <Container>
         <Row style={{display:'flex', flexWrap: 'noWrap'}}>
-          <Col md={12} style={{display: 'flex', flexGrow: '0', flexShrink: '0', flexBasis: '350px'}}>
-              <div className="wrapper" style={{width:'-webkit-fill-available'}}>
+          <Col md={12} className="column-one">
+              <div className="wrapper">
                 <EstimateForm
                   population={population}
                   timeToElapse={timeToElapse}
@@ -69,8 +69,8 @@ function App() {
                 />    
             </div>
             </Col>
-            <Col md={12} style={{display: 'flex', flexGrow: '0', flexShrink: '0', flexBasis: '570px'}}>
-              <div className="wrapper" style={{width:'-webkit-fill-available'}}>
+            <Col md={12} className="column-one">
+              <div className="wrapper">
                 <EstimatedInfo
                   data={data}
                 />

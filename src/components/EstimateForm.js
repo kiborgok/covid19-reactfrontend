@@ -5,7 +5,6 @@ const EstimateForm = (props) => {
 
   return (
     <div className="form-wrapper">
-        <div className="form-title">Estimator Form</div>
       <Form onSubmit={(props.onSubmit)}>
         <Form.Group controlId="data-population">
           <Form.Label>Population</Form.Label>
@@ -36,7 +35,7 @@ const EstimateForm = (props) => {
           </Form.Control>
         </Form.Group>
 
-        <Button style={{boxShadow: '0px 8px 10px 0px grey'}} id="data-go-estimate" variant="info" size="lg" block="block" type="submit">
+        <Button className="raise-button" id="data-go-estimate" variant="info" size="lg" block="block" type="submit">
           Go Estimate
         </Button>
       </Form> 

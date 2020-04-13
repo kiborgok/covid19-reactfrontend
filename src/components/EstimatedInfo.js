@@ -29,7 +29,7 @@ const EstimatedInfo = (props) => {
             <h2>Data To Estimate</h2>
             <Table striped bordered hover>
             <thead>
-            <tr style={{color: '#007bff'}}>
+            <tr className="blue-color">
                 <th>Population</th>
                 <th>Time To Elapse</th>
                 <th>Reported Cases</th>
