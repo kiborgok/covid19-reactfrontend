@@ -2,7 +2,6 @@
   "name": "estimator-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://myname.github.io/myapp",
   "engines": {
     "npm": "6.12.0",
     "node": "12.12.0"
