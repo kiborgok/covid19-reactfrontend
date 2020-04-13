@@ -1,71 +1,86 @@
-import React from "react";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import React, { useState } from "react";
+import {
+  Row,
+  Col,
+  Container,
+  Navbar
+} from "react-bootstrap";
+
 import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
-import CreateStudent from "./components/create-student.component";
-import EditStudent from "./components/edit-student.component";
-import StudentList from "./components/student-list.component";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import EstimateForm from "./components/EstimateForm";
+import EstimatedInfo from "./components/EstimatedInfo";
 
 function App() {
-  return (<Router>
-    <div className="App">
-      <header className="App-header">
-        <Navbar bg="dark" variant="dark">
-          <Container>
 
+  const [population, setPopulation] = useState(47000000);
+  const [timeToElapse, setTimeToElapse] = useState(28);
+  const [reportedCases, setReportedCases] = useState(1760);
+  const [totalHospitalBeds, setTotalHospitalBeds] = useState(70000);
+  const [periodType, setPeriodType] = useState('days');
+
+  const [data, setData] = useState({
+    population: population,
+    timeToElapse: timeToElapse,
+    reportedCases: reportedCases,
+    totalHospitalBeds: totalHospitalBeds,
+    periodType:periodType
+  });
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    setData({ population, timeToElapse, reportedCases, totalHospitalBeds, periodType });
+    console.log(data);
+  };
+
+  return (
+    <Router>
+    <div className="App">
+      <header className="App-header" style={{ backgroundColor: 'transparent',height:'80px',border: '1px solid lightskyblue',boxShadow: '1px 1px 10px 0px grey'}} >
+        <Navbar variant="light">
+          <Container style={{maxWidth: '800'}}>
             <Navbar.Brand>
-              <Link to={"/create-student"} className="nav-link">
-                React MERN Stack App
+              <Link style={{color: '#007bff'}}  to={"/"} className="nav-link">
+                Covid19 Estimator
               </Link>
             </Navbar.Brand>
-
-            <Nav className="justify-content-end">
-              <Nav>
-                <Link to={"/create-student"} className="nav-link">
-                  Create Student
-                </Link>
-              </Nav>
-
-              {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
-                  Edit Student
-                </Link>
-              </Nav> */}
-
-              <Nav>
-                <Link to={"/student-list"} className="nav-link">
-                  Student List
-                </Link>
-              </Nav>
-            </Nav>
-
           </Container>
         </Navbar>
       </header>
 
-      <Container>
-        <Row>
-          <Col md={12}>
-            <div className="wrapper">
-              <Switch>
-                <Route exact path='/' component={CreateStudent} />
-                <Route path="/create-student" component={CreateStudent} />
-                <Route path="/edit-student/:id" component={EditStudent} />
-                <Route path="/student-list" component={StudentList} />
-              </Switch>
+      <Container style={{display:'flex'}}>
+        <Row style={{display:'flex', flexWrap: 'noWrap'}}>
+          <Col md={12} style={{display: 'flex', flexGrow: '0', flexShrink: '0', flexBasis: '350px'}}>
+              <div className="wrapper" style={{width:'-webkit-fill-available'}}>
+                <EstimateForm
+                  population={population}
+                  timeToElapse={timeToElapse}
+                  reportedCases={reportedCases}
+                  totalHospitalBeds={totalHospitalBeds}
+                  periodType={periodType}
+                  onSubmit={onSubmit} data={data}
+                  setPopulation={setPopulation}
+                  setTimeToElapse={setTimeToElapse}
+                  setReportedCases={setReportedCases}
+                  setTotalHospitalBeds={setTotalHospitalBeds}
+                  setPeriodType={setPeriodType}
+                />    
+            </div>
+            </Col>
+            <Col md={12} style={{display: 'flex', flexGrow: '0', flexShrink: '0', flexBasis: '570px'}}>
+              <div className="wrapper" style={{width:'-webkit-fill-available'}}>
+                <EstimatedInfo
+                  data={data}
+                />
             </div>
           </Col>
         </Row>
       </Container>
     </div>
-  </Router>);
+  </Router>
+  );
 }
 
 export default App;
