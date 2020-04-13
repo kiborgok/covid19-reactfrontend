@@ -50,7 +50,7 @@ function App() {
       </header>
 
       <Container>
-        <Row style={{display:'flex', flexWrap: 'noWrap'}}>
+        <Row>
           <Col md={12} className="column-one">
               <div className="wrapper">
                 <EstimateForm

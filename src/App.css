@@ -1,9 +1,4 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: honeydew;
-}
+
 
 .App-header{
   height: 80px;
@@ -17,32 +12,24 @@
 
 .container{
   display:flex;
-  max-width: 100%;
   margin: 10px 15px;
-  padding: 3px 3px 3px 3px;
-}
-
-.wrapper{
-  width:-webkit-fill-available;
 }
 
 .raise-button{
   box-shadow: 0px 8px 10px 0px grey;
 }
 
-.column-one{
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 350px;
-}
-
-.column-two{
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
+.col-md-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
   flex-basis: 570px;
 }
+
+.row{
+  display: flex;
+  flex-wrap: nowrap;
+}
+
 
 .navbar-brand a {
   color: #ffffff;
