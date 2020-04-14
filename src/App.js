@@ -1,12 +1,4 @@
 import React, { useState } from "react";
-import {
-  Row,
-  Col,
-  Container,
-  Navbar
-} from "react-bootstrap";
-
-import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 
 import { BrowserRouter as Router, Link } from "react-router-dom";
@@ -38,20 +30,13 @@ function App() {
     <Router>
     <div className="App">
       <header className="App-header" >
-        <Navbar variant="light">
-          <Container >
-            <Navbar.Brand>
-              <Link to={"/"} style={{color: '#007bff'}}>
-                Covid19 Estimator
-              </Link>
-            </Navbar.Brand>
-          </Container>
-        </Navbar>
+          <Link to={"/"} style={{color: '#007bff'}}>
+            Covid19 Estimator
+          </Link>
       </header>
 
-        <Container>
-          <Row>
-          <Col md={12}>
+        <div>
+          <table>
               <div className="wrapper">
                 <EstimateForm
                   population={population}
@@ -67,16 +52,15 @@ function App() {
                   setPeriodType={setPeriodType}
                 />    
             </div>
-            </Col>
-            <Col md={12}>
+            
+            
               <div className="wrapper">
                 <EstimatedInfo
                   data={data}
                 />
             </div>
-            </Col>
-            </Row>
-      </Container>
+            </table>
+      </div>
     </div>
   </Router>
   );

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
-
 
 const ImpactEstimation = (props) => {
     const impact_data = props.impact_data;
@@ -13,8 +11,7 @@ const ImpactEstimation = (props) => {
     return (
         <>
             <h2>Impact Estimation</h2>
-            <Table striped bordered hover>
-            <thead>
+            <table striped bordered hover>
             <tr>
                 <th>Currently Infected</th>
                 <th>Infections By Requested Time</th>
@@ -23,8 +20,6 @@ const ImpactEstimation = (props) => {
                 <th>Cases For ICU By Requested Time</th>
                 <th>Cases For Ventilators By Requested Time</th>
             </tr>
-            </thead>
-            <tbody>
             {Object.keys(impact_data).length > 0 ? (
                 <tr>
                     <td>{currentlyInfected}</td>
@@ -39,8 +34,8 @@ const ImpactEstimation = (props) => {
                 <td colSpan={3}>No Data</td>
                 </tr>
             )}
-            </tbody>
-        </Table>
+            
+        </table>
         </>
     );
 }

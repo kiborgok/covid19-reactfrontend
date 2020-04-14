@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table } from 'react-bootstrap';
 import ImpactEstimation from './ImpactEstimation';
 import SevereImpactEstimation from './SevereImpactEstimation';
 
@@ -27,8 +26,7 @@ const EstimatedInfo = (props) => {
     return (
         <>
             <h2>Data To Estimate</h2>
-            <Table striped bordered hover>
-            <thead>
+            <table striped bordered hover>
             <tr className="blue-color">
                 <th>Population</th>
                 <th>Time To Elapse</th>
@@ -36,8 +34,6 @@ const EstimatedInfo = (props) => {
                 <th>Total Hospital Beds</th>
                 <th>Period Type</th>
             </tr>
-            </thead>
-            <tbody>
             {Object.keys(covid_data).length > 0 ? (
                 <tr key={1}>
                     <td>{covid_data.population}</td>
@@ -51,8 +47,7 @@ const EstimatedInfo = (props) => {
                 <td colSpan={3}>No users</td>
                 </tr>
             )}
-            </tbody>
-            </Table>
+            </table>
             <ImpactEstimation
                 normalizePeriod={normalizePeriod}
                 impact_data={covid_data}
