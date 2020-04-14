@@ -38,13 +38,14 @@ function App() {
         <div>
           <table>
               <div className="wrapper">
-                <EstimateForm
+              <EstimateForm
+                  data={data}
                   population={population}
                   timeToElapse={timeToElapse}
                   reportedCases={reportedCases}
                   totalHospitalBeds={totalHospitalBeds}
                   periodType={periodType}
-                  onSubmit={onSubmit} data={data}
+                  onSubmit={onSubmit}
                   setPopulation={setPopulation}
                   setTimeToElapse={setTimeToElapse}
                   setReportedCases={setReportedCases}
