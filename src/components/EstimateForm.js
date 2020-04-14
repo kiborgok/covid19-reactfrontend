@@ -36,7 +36,7 @@ const EstimateForm = (props) => {
           </Form.Control>
         </Form.Group>
 
-        <Button className="raise-button" id="data-go-estimate" variant="info" size="lg" block="block" type="submit">
+        <Button id="data-go-estimate" variant="info" size="lg" block="block" type="submit">
           Go Estimate
         </Button>
       </Form> 
