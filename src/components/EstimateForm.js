@@ -6,6 +6,7 @@ const EstimateForm = (props) => {
   return (
     <div className="form-wrapper">
       <Form onSubmit={(props.onSubmit)}>
+        <header>Form data</header>
         <Form.Group controlId="data-population">
           <Form.Label>Population</Form.Label>
           <Form.Control type="number" value={props.population} onChange={(e)=>props.setPopulation(e.target.value)} placeholder="90000000" min="1"  required/>

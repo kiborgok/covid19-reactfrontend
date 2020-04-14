@@ -49,9 +49,9 @@ function App() {
         </Navbar>
       </header>
 
-      <Container>
-        <Row>
-          <Col md={12} className="column-one">
+        <Container>
+          <Row>
+          <Col md={12}>
               <div className="wrapper">
                 <EstimateForm
                   population={population}
@@ -68,14 +68,14 @@ function App() {
                 />    
             </div>
             </Col>
-            <Col md={12} className="column-one">
+            <Col md={12}>
               <div className="wrapper">
                 <EstimatedInfo
                   data={data}
                 />
             </div>
-          </Col>
-        </Row>
+            </Col>
+            </Row>
       </Container>
     </div>
   </Router>

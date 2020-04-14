@@ -1,38 +1,28 @@
-
-
 .App-header{
   height: 80px;
   border: 1px solid lightskyblue;
   box-shadow: 1px 1px 10px 0px grey;
 }
 
-.blue-color{
-  color: #007bff;
+.container{
+  max-width: 900px;
 }
 
-.container{
-  display:flex;
-  margin: 10px 15px;
+.col-md-12{
+  margin-top: 30px;
 }
 
 .raise-button{
   box-shadow: 0px 8px 10px 0px grey;
 }
 
-.col-md-12 {
-  flex: 0 0 100%;
-  max-width: 100%;
-  flex-basis: 570px;
-}
-
-.row{
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-
 .navbar-brand a {
   color: #ffffff;
+}
+
+form > header{
+  font-weight: bold;
+  font-size: 14pt;
 }
 
 .form-wrapper{
@@ -48,5 +38,9 @@
   display: inline-block; 
   border: 0.5px solid lightskyblue;
   box-shadow: 0px 8px 10px 0px grey;
+}
+
+.form-label{
+  font-weight: bold;
 }
 
